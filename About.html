@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleanCity — About Us</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- HEADER -->
+    <header class="bg-gray-900 text-white p-5 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="Homepage.html" class="text-3xl font-bold text-green-400 flex items-center">
+                <i class="fas fa-leaf mr-2"></i>
+                CleanCity
+            </a>
+
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8 text-lg">
+                    <li><a href="Homepage.html" class="hover:text-green-400 transition">Home</a></li>
+                    <li><a href="About.html" class="text-green-400 font-semibold">About</a></li>
+                    <li><a href="Contact.html" class="hover:text-green-400 transition">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-3xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4">
+            <ul class="flex flex-col items-center space-y-4 text-lg">
+                <li><a href="Homepage.html" class="hover:text-green-400 transition">Home</a></li>
+                <li><a href="About.html" class="hover:text-green-400 transition">About</a></li>
+                <li><a href="Contact.html" class="hover:text-green-400 transition">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="bg-gray-900 text-white py-28 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4">About CleanCity</h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                Empowering communities through smarter, cleaner, and more sustainable waste management solutions.
+            </p>
+        </div>
+    </section>
+
+    <!-- WHO WE ARE SECTION -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row gap-12 items-center">
+            
+            <div class="md:w-1/2">
+                <img src="https://picsum.photos/seed/cleanteam/600/450" class="rounded-lg shadow-xl w-full">
+            </div>
+
+            <div class="md:w-1/2">
+                <h2 class="text-4xl font-bold mb-6">Who We Are</h2>
+                <p class="text-lg text-gray-700 mb-6">
+                    CleanCity is a modern environmental initiative dedicated to transforming waste management
+                    through smarter technologies, community involvement, and sustainable systems. 
+                </p>
+                <p class="text-lg text-gray-700">
+                    Our mission is to create cleaner urban spaces by empowering people with tools, data, and awareness
+                    to make environmentally conscious decisions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION & VISION SECTION -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12">
+
+            <!-- Mission -->
+            <div class="bg-white p-10 rounded-xl shadow-lg">
+                <i class="fas fa-bullseye text-green-600 text-5xl mb-6"></i>
+                <h3 class="text-3xl font-bold mb-4">Our Mission</h3>
+                <p class="text-lg text-gray-700">
+                    To reduce landfill waste, improve recycling rates, and introduce smart solutions that minimize 
+                    environmental impact while empowering communities to take action.
+                </p>
+            </div>
+
+            <!-- Vision -->
+            <div class="bg-white p-10 rounded-xl shadow-lg">
+                <i class="fas fa-lightbulb text-green-600 text-5xl mb-6"></i>
+                <h3 class="text-3xl font-bold mb-4">Our Vision</h3>
+                <p class="text-lg text-gray-700">
+                    A sustainable, environmentally aware future where cities operate with smart, clean systems that benefit
+                    both people and the planet.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GOALS SECTION -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Our Goals</h2>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-gray-50 p-8 border rounded-xl shadow">
+                    <i class="fas fa-recycle text-4xl text-green-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-3">Increase Recycling Rates</h4>
+                    <p class="text-gray-700">
+                        Encouraging proper disposal habits through education and user-friendly systems.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-8 border rounded-xl shadow">
+                    <i class="fas fa-trash text-4xl text-green-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-3">Reduce Landfill Waste</h4>
+                    <p class="text-gray-700">
+                        Implementing smart sensors and data-driven solutions to optimize waste management.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-8 border rounded-xl shadow">
+                    <i class="fas fa-users text-4xl text-green-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-3">Empower Communities</h4>
+                    <p class="text-gray-700">
+                        Engaging local residents in recycling drives, education programs, and community clean-ups.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Meet Our Team</h2>
+
+            <div class="grid md:grid-cols-3 gap-12">
+
+                <div class="text-center bg-white rounded-xl shadow-lg p-8">
+                    <img src="https://picsum.photos/seed/person1/200" class="rounded-full mx-auto mb-6 shadow-lg">
+                    <h4 class="text-xl font-semibold">Alex Morgan</h4>
+                    <p class="text-gray-500 mb-3">Project Lead</p>
+                    <p class="text-gray-600 text-sm">Oversees strategy and sustainability advancement.</p>
+                </div>
+
+                <div class="text-center bg-white rounded-xl shadow-lg p-8">
+                    <img src="https://picsum.photos/seed/person2/200" class="rounded-full mx-auto mb-6 shadow-lg">
+                    <h4 class="text-xl font-semibold">Sarah Thompson</h4>
+                    <p class="text-gray-500 mb-3">Tech Specialist</p>
+                    <p class="text-gray-600 text-sm">Expert in smart sensors and digital waste mapping.</p>
+                </div>
+
+                <div class="text-center bg-white rounded-xl shadow-lg p-8">
+                    <img src="https://picsum.photos/seed/person3/200" class="rounded-full mx-auto mb-6 shadow-lg">
+                    <h4 class="text-xl font-semibold">Liam Patel</h4>
+                    <p class="text-gray-500 mb-3">Community Coordinator</p>
+                    <p class="text-gray-600 text-sm">Leads outreach, events, and public education programs.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto text-center">
+            <div class="flex justify-center space-x-8 mb-6">
+                <a href="#" class="text-3xl hover:text-green-400"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-3xl hover:text-green-400"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-3xl hover:text-green-400"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-3xl hover:text-green-400"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p class="text-lg">&copy; 2025 CleanCity Team. All Rights Reserved.</p>
+             <p class="text-md text-gray-400">Building smarter, cleaner and greener communities through innovation and sustainability.</p>
+        </div>
+    </footer>
+
+    <!-- MOBILE MENU SCRIPT -->
+    <script>
+        document.getElementById("mobile-menu-btn").addEventListener("click", () => {
+            document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+</html>

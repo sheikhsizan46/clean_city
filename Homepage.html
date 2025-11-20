@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleanCity - Smart Waste Management</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Google Font (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Load Font Awesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Load jQuery (for interactivity) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+    <!-- Favicon (Example) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>♻️</text></svg>">
+
+    <!-- Custom Styles -->
+    <style>
+        /* Set the default font */
+        body 
+        
+        {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Style for the 'active' navigation link */
+        .nav-link.active {
+            @apply text-green-400;
+        }
+
+        /* Style for the validation error messages */
+        .error-message {
+            display: none;
+            color: red;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Interactive Accordion Styles */
+        .accordion-title {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .accordion-title.open {
+            @apply bg-green-700 text-white;
+        }
+        .accordion-content {
+            display: none; /* Hidden by default */
+        }
+
+        /* Portfolio Gallery Hover Effect */
+        .gallery-item {
+            @apply relative overflow-hidden rounded-lg shadow-lg;
+        }
+        .gallery-item img {
+            @apply w-full h-full object-cover transition-transform duration-500 ease-in-out;
+        }
+        .gallery-item:hover img {
+            @apply transform scale-110;
+        }
+        .gallery-overlay {
+            @apply absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 transition-all duration-500 ease-in-out;
+        }
+        .gallery-item:hover .gallery-overlay {
+            @apply bg-opacity-60 opacity-100;
+        }
+
+        /* Hero Background */
+        #home {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://picsum.photos/seed/cityscape/1600/900');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    
+
+    <!-- Header & Navigation Bar -->
+    <!-- This is a modern, sticky navigation bar -->
+    <header id="navbar" class="bg-gray-900 text-white p-5 sticky top-0 z-50 shadow-lg transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#home" class="text-3xl font-bold text-green-400 flex items-center">
+                <i class="fas fa-leaf mr-2"></i>
+                CleanCity
+            </a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8 text-lg">
+                    <li><a href="#home" class="nav-link hover:text-green-400 transition-colors">Home</a></li>
+                    <li><a href="/About.html" class="nav-link hover:text-green-400 transition-colors">About</a></li>
+                    <li><a href="#tips" class="nav-link hover:text-green-400 transition-colors">Recycling Tips</a></li>
+                    <li><a href="/Contact.html" class="nav-link hover:text-green-400 transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="mobile-menu-btn" class="md:hidden text-3xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="md:hidden hidden mt-4">
+            <ul class="flex flex-col space-y-4 items-center text-lg">
+                <li><a href="#home" class="nav-link hover:text-green-400 transition-colors">Home</a></li>
+                <li><a href="#about" class="nav-link hover:text-green-400 transition-colors">About</a></li>
+                <li><a href="#tips" class="nav-link hover:text-green-400 transition-colors">Recycling Tips</a></li>
+                <li><a href="#portfolio" class="nav-link hover:text-green-400 transition-colors">Gallery</a></li>
+                <li><a href="#contact" class="nav-link hover:text-green-400 transition-colors">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Hero Section -->
+        <section id="home" class="h-screen flex items-center justify-center text-white text-center">
+            <div class="container mx-auto px-4">
+                <h1 class="text-6xl md:text-8xl font-extrabold mb-4" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">Building a Cleaner, Smarter Future.</h1>
+                <p class="text-2xl md:text-3xl font-light mb-8">Join the CleanCity initiative and transform our community's approach to waste management.</p>
+                <a href="#tips" class="bg-green-600 text-white font-bold py-4 px-10 text-xl rounded-full hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Get Started
+                </a>
+            </div>
+        </section>
+
+    
+       <!-- Section 3: Interactive Recycling Tips (jQuery Accordion) -->
+<section id="tips" class="py-20 bg-green-800 text-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">Your Guide to Smart Recycling</h2>
+
+        <div class="max-w-3xl mx-auto bg-white text-gray-800 rounded-lg shadow-xl overflow-hidden">
+
+            <!-- Tip 1 -->
+            <div class="accordion-item border-b border-gray-200">
+                <h3 class="accordion-title text-xl font-semibold p-6 flex justify-between items-center cursor-pointer">
+                    <span class="flex items-center gap-3">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3076/3076314.png" class="w-7 h-7">
+                        Tip 1: Know Your Plastics
+                    </span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </h3>
+                <div class="accordion-content px-6 pb-6 hidden">
+                    <p>
+                        Take a moment to check the number printed inside the recycling symbol on plastic items. 
+                        Most councils accept number 1 and number 2 plastics as they are easier to process. 
+                        This quick habit helps ensure your recycling is handled correctly.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tip 2 -->
+            <div class="accordion-item border-b border-gray-200">
+                <h3 class="accordion-title text-xl font-semibold p-6 flex justify-between items-center cursor-pointer">
+                    <span class="flex items-center gap-3">
+                        <img src="https://cdn-icons-png.flaticon.com/128/11071/11071874.png" class="w-7 h-7">
+                        Tip 2: Clean, Dry and Loose
+                    </span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </h3>
+                <div class="accordion-content px-6 pb-6 hidden">
+                    <p>
+                        A small amount of food left inside a container can spoil a whole recycling batch. 
+                        Give jars and bottles a quick rinse, let them dry and place them loosely in the bin. 
+                        It helps recycling centres sort materials more easily.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tip 3 -->
+            <div class="accordion-item border-b border-gray-200">
+                <h3 class="accordion-title text-xl font-semibold p-6 flex justify-between items-center cursor-pointer">
+                    <span class="flex items-center gap-3">
+                        <img src="https://cdn-icons-png.flaticon.com/128/992/992651.png" class="w-7 h-7">
+                        Tip 3: The Scrunch Test
+                    </span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </h3>
+                <div class="accordion-content px-6 pb-6 hidden">
+                    <p>
+                        When you are unsure about a shiny wrapper, try the scrunch test. 
+                        If it stays scrunched, it is likely aluminium foil and can be recycled when clean. 
+                        If it pops open again, it belongs in general waste because it is usually plastic film.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tip 4 -->
+            <div class="accordion-item">
+                <h3 class="accordion-title text-xl font-semibold p-6 flex justify-between items-center cursor-pointer">
+                    <span class="flex items-center gap-3">
+                        <img src="https://cdn-icons-png.flaticon.com/128/287/287221.png" class="w-7 h-7">
+                        Tip 4: What About Pizza Boxes
+                    </span>
+                    <i class="fas fa-chevron-down transform transition-transform"></i>
+                </h3>
+                <div class="accordion-content px-6 pb-6 hidden">
+                    <p>
+                        Pizza boxes often cause confusion. 
+                        If the cardboard has grease or cheese on it, it cannot be recycled. 
+                        Tear off the clean top half to recycle and put the greasy part in general waste or compost if your area allows.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    // jQuery accordion with fade + slide
+    $(document).ready(function () {
+        $(".accordion-title").click(function () {
+
+            // Toggle icon rotation
+            $(this).find("i").toggleClass("rotate-180");
+
+            // Toggle content with animation
+            $(this).next(".accordion-content")
+                .stop()
+                .slideToggle(250)
+                .toggleClass("hidden");
+        });
+    });
+</script>
+
+<style>
+    .rotate-180 {
+        transform: rotate(180deg);
+    }
+</style>
+
+        
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-8 mb-6">
+                <a href="#" class="text-3xl hover:text-green-400 transition-colors"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-3xl hover:text-green-400 transition-colors"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-3xl hover:text-green-400 transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-3xl hover:text-green-400 transition-colors"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p class="text-lg mb-2">&copy; 2025 CleanCity Team. All Rights Reserved.</p>
+            <p class="text-md text-gray-400">Building smarter, cleaner and greener communities through innovation and sustainability.</p>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript / jQuery Section -->
+    <script>
+        $(document).ready(function() {
+
+            // --- Mobile Menu Toggle ---
+            $('#mobile-menu-btn').on('click', function() {
+                $('#mobile-menu').slideToggle();
+            });
+            // Close mobile menu when a link is clicked
+            $('#mobile-menu .nav-link').on('click', function() {
+                $('#mobile-menu').slideUp();
+            });
+
+
+            // --- Smooth Scrolling for All Anchor Links ---
+            $('a[href^="#"]').on('click', function(event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Calculate offset for sticky header
+                    var headerHeight = $('#navbar').outerHeight() || 0;
+
+                    // Animate scroll
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top - headerHeight
+                    }, 800, function() {
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        // window.location.hash = hash; // Commented out to keep URL clean
+                    });
+                }
+            });
+
+
+            // --- Active Nav Link on Scroll ---
+            $(window).on('scroll', function() {
+                var scrollPos = $(document).scrollTop();
+                var headerHeight = $('#navbar').outerHeight() || 0;
+                
+                $('section').each(function() {
+                    var currLink = $(this);
+                    var refElement = $(currLink);
+                    
+                    // Check if this section is in view
+                    if (refElement.position().top - headerHeight <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                        $('.nav-link').removeClass('active');
+                        $('.nav-link[href="#' + refElement.attr('id') + '"]').addClass('active');
+                    }
+                });
+
+                // Sticky Header Background change on scroll
+                if (scrollPos > 50) {
+                    $('#navbar').addClass('bg-gray-900/90 backdrop-blur-sm');
+                } else {
+                    $('#navbar').removeClass('bg-gray-900/90 backdrop-blur-sm');
+                }
+            });
+
+
+            // --- Interactive Tips Accordion (Task for Member 2) ---
+            $('.accordion-title').on('click', function() {
+                // Close all other accordion items
+                $(this).closest('.accordion-item').siblings().find('.accordion-content').slideUp();
+                $(this).closest('.accordion-item').siblings().find('.accordion-title').removeClass('open');
+                $(this).closest('.accordion-item').siblings().find('.fa-chevron-down').removeClass('rotate-180');
+                
+                // Toggle the clicked accordion item
+                $(this).next('.accordion-content').slideToggle();
+                $(this).toggleClass('open');
+                $(this).find('.fa-chevron-down').toggleClass('rotate-180');
+            });
+            // Open the first tip by default
+            $('.accordion-item:first .accordion-title').trigger('click');
+
+
+        
+        
+    </script>
+</body>
+</html>
